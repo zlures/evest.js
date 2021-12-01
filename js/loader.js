@@ -4,6 +4,9 @@ Evest.JS @loader
           made w/ love
 ———————————————**/
 
+var element = document.getElementByTagName("body");
+var numberOfChildren = element.getElementsByTagName('*').length
+if (numberOfChildren === 0) {
 const tester = document.createElement('div');
 tester.classList.add('evest-info');
 const body = document.body
@@ -14,3 +17,13 @@ const indiv = `
 <p style="position: absolute;top: 55%;left: 50%;margin-top: -50px;margin-left: -50px;font-size:2rem" class="textfocusin"> loaded.</h1>
 <div style="height:4px;background-color:gray;border-radius:10px">`
 tester.innerHTML = indiv;
+}
+else {
+const styler = document.createElement('div');
+const body = document.body
+body.appendChild(styler);
+const styles = `
+<link rel="stylesheet" href="https://zlures.github.io/evest.js/css/error.css"></link>
+`
+styler.innerHTML = styles
+}
